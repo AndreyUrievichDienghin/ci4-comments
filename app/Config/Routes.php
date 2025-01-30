@@ -8,4 +8,5 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Comments::index');
 $routes->get('/comments', 'Comments::index');
 $routes->post('/comments/create', 'Comments::create');
+$routes->post('/comments/delete', 'Comments::delete');
 $routes->post('/comments/create-random', 'Comments::createBatch');

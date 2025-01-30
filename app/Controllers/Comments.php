@@ -118,4 +118,19 @@ class Comments extends BaseController
 
         return false;
     }
+
+    public function delete(){
+        $id = $this->request->getPost('commentId');
+        $result = $this->commentManager->deleteComments($id);
+        if($result['error']){
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => implode('<br>', $result['errors']),
+            ]);
+        }
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Комментарии удален',
+        ]);
+    }
 }

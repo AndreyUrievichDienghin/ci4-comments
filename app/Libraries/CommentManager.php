@@ -69,4 +69,21 @@ class CommentManager {
             ];
         }
     }
+
+    public function deleteComments(int $id) {
+        $result = $this->commentModel->delete($id);
+        if($result){
+            return [
+                'success' => true,
+                'error' => false,
+            ];
+        }
+        else{
+            return [
+                'success' => false,
+                'error' => true,
+                'errors' => $this->commentModel->errors()
+            ];
+        }
+    }
 }

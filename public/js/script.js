@@ -37,7 +37,9 @@ CommentList.init = function (currentSortField,currentSortDirection,currentPage) 
         }, function(response) {
             $('#comments-list').html(response.comments);
             $('#pagination').html(response.pagination);
+            addDeleteEvent();
         });
+
     }
 
     $('#sort-id').click(function() {
@@ -87,6 +89,26 @@ CommentList.init = function (currentSortField,currentSortDirection,currentPage) 
         currentPage = $(this).data('page');
         loadComments();
     });
+
+    function addDeleteEvent(){
+        $('.btn-comment-delete').click(function() {
+            let id = $(this).attr('data-id');
+
+            if(id){
+                $.post('/comments/delete', { commentId: id }, function(response) {
+                    if (response.status === 'success') {
+                        showAlert(response.message, 'success');
+                        loadComments();
+                    } else {
+                        showAlert(response.message, 'danger');
+                    }
+                });
+            }
+
+        });
+    }
+
+    addDeleteEvent();
 
     $('#create-random').click(function() {
         const count = $('#comment-count-input').val();
