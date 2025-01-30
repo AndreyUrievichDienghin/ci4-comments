@@ -17,29 +17,29 @@
     <h1 class="mb-4">Комментарии</h1>
 
     <div class="mb-4">
-        <div class="form-inline">
+        <div class="form-inline rand-block">
             <input type="number" id="comment-count-input" class="form-control mr-2" min="1" value="10" placeholder="Количество">
             <button id="create-random" class="btn btn-success">Создать случайные комментарии</button>
         </div>
     </div>
 
-    <!-- Блок сортировки -->
+
     <div class="sort-buttons mb-4">
         <button id="sort-id" class="btn btn-outline-primary <?=$sortField == 'id' ? $sortDirection.' active' : ''?>">Сортировать по ID</button>
         <button id="sort-date" class="btn btn-outline-primary <?=$sortField == 'date' ? $sortDirection.' active' : ''?>">Сортировать по Дате</button>
     </div>
 
-    <!-- Список комментариев -->
+
     <div id="comments-list">
         <?= view('comments/_comments', ['comments' => $comments]) ?>
     </div>
 
-    <!-- Постраничная навигация -->
+
     <div id="pagination">
         <?= $pager->links('default', 'custom_pagination') ?>
     </div>
 
-    <!-- Форма добавления комментария -->
+
     <h2 class="mt-5">Добавить комментарий</h2>
     <form id="add-comment-form">
         <div class="form-group">

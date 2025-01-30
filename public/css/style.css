@@ -7,16 +7,14 @@
 }
 .sort-buttons button {
     margin-right: 10px;
-    position: relative;
-    padding-right: 30px;
+    margin-bottom: 10px;
+}
+.sort-buttons button.active {
+    font-weight: bold;
 }
 .sort-buttons button::after {
     content: '';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
+    margin-left: 5px;
 }
 .sort-buttons button.asc::after {
     content: '↑';
@@ -24,10 +22,37 @@
 .sort-buttons button.desc::after {
     content: '↓';
 }
-
+.pagination {
+    justify-content: center;
+}
+.rand-block{
+    gap: 10px;
+}
 #alert-container{
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
 }
+@media (max-width: 576px) {
+    .comment {
+        padding: 10px;
+    }
+    .comment p {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .form-group label {
+        font-size: 14px;
+    }
+    .form-control {
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+    }
+    #create-random{
+        width: 100%;
+    }
+}
+

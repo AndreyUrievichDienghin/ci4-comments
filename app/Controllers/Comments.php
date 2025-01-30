@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Libraries\CommentManager;
-use App\Models\CommentModel;
 use App\Traits\CommentTrait;
 
 class Comments extends BaseController
