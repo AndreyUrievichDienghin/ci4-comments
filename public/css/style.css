@@ -1,0 +1,33 @@
+.comment {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.sort-buttons button {
+    margin-right: 10px;
+    position: relative;
+    padding-right: 30px;
+}
+.sort-buttons button::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+.sort-buttons button.asc::after {
+    content: '↑';
+}
+.sort-buttons button.desc::after {
+    content: '↓';
+}
+
+#alert-container{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
